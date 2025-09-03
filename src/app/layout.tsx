@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'ApexFolio | Professional Portfolio',
-  description: 'A modern, dynamic portfolio showcasing projects and skills.',
+  title: "Nithin's Portfolio",
+  description: 'A modern portfolio showcasing my projects and skills.',
 };
 
 export default function RootLayout({

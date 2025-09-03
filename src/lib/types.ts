@@ -12,8 +12,8 @@ export interface Project {
 }
 
 export interface About {
-  background: string;
+  background: string[];
   skills: string[];
-  philosophy: string;
+  philosophy: string[];
   highlights: string[];
 }

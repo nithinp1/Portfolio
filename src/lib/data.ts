@@ -2,9 +2,11 @@ import type { About, Project } from "./types";
 
 // This is mock data. In a real application, you would fetch this from a database or CMS.
 const mockAboutData: About = {
-  background: "As a Computer Science student, I'm captivated by the potential of AI to transform industries and enhance human capabilities. My journey began with a curiosity for how machines could learn and reason, which has evolved into a drive to build and deploy intelligent applications. I am constantly exploring the frontiers of AI, from natural language processing to computer vision, and applying my academic knowledge to create innovative, real-world solutions.",
-  skills: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "SQL", "Hugging Face Transformers", "NLTK", "OpenCV", "Google Colab", "AWS SageMaker"],
-  philosophy: "I am committed to the principles of responsible and human-centered AI. I believe in developing systems that are not only technologically advanced but also transparent, fair, and beneficial to society. My approach involves a creative and experimental mindset, a deep commitment to ethical considerations, and a focus on building AI that empowers and assists people.",
+  background:[ "As a Computer Science student, my curiosity about how machines learn has evolved into a drive to build intelligent applications. I am now focused on exploring frontiers like NLP and computer vision to apply my academic knowledge and create innovative, real-world solutions."
+    ],
+  skills: ["Python", "TensorFlow", "PyTorch", "Pandas", "SQL", "Hugging Face Transformers","OpenCV", "Google Colab"],
+  philosophy: ["I am committed to the principles of responsible and human-centered AI. I believe in developing systems that are not only technologically advanced but also transparent, fair, and beneficial to society. My approach involves a creative and experimental mindset, a deep commitment to ethical considerations, and a focus on building AI that empowers and assists people."
+  ],
   highlights: [
     "Engineered an NLP model to analyze and classify student feedback for university courses, providing actionable insights into course improvements.",
     "Designed and implemented a deep learning-based recommendation engine to provide personalized movie suggestions from the MovieLens dataset.",

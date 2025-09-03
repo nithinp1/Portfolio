@@ -19,23 +19,6 @@ This is a modern, dynamic, and responsive portfolio website built with Next.js a
 - **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 - **AI (optional)**: [Genkit](https://firebase.google.com/docs/genkit) (scaffolding in place)
 
-## Getting Started
-
-To get this project running locally, follow these steps:
-
-1.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-
-2.  **Run the Development Server**:
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:9002](http://localhost:9002) in your browser to see the result.
-
-## Customization
-
 ### Updating Content
 
 -   **About Me**: Modify the `mockAboutData` object in `src/lib/data.ts` to update the text, skills, and project highlights.
