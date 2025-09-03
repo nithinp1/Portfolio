@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ApexFolio - Professional Portfolio
+
+ApexFolio is a modern, dynamic, and responsive portfolio website built with Next.js and designed to be easily managed. It automatically showcases your pinned GitHub repositories, allows for a detailed "About Me" section, and includes a functional contact form.
+
+## Core Features
+
+- **Dynamic Project Display**: Automatically fetches and displays your pinned repositories from GitHub, ensuring your portfolio is always up-to-date with your best work.
+- **Dynamic Content**: The "About Me" and "Resume" sections are designed to be easily updated. The content is fetched from `src/lib/data.ts`.
+- **Contact Form**: A fully functional contact form allows visitors to get in touch with you directly.
+- **Responsive Design**: The entire layout is built with Tailwind CSS and ShadCN UI, ensuring a seamless experience across all devices.
+- **Modern Tech Stack**: Built with Next.js App Router, React Server Components, and TypeScript for a fast, maintainable, and type-safe application.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [ShadCN UI](https://ui.shadcn.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Icons**: [Lucide React](https://lucide.dev/guide/packages/lucide-react)
+- **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **AI (optional)**: [Genkit](https://firebase.google.com/docs/genkit) (scaffolding in place)
 
 ## Getting Started
 
-First, run the development server:
+To get this project running locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Run the Development Server**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:9002](http://localhost:9002) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Updating Content
 
-## Learn More
+-   **About Me**: Modify the `mockAboutData` object in `src/lib/data.ts` to update the text, skills, and project highlights.
+-   **Projects**: The projects are sourced from your pinned GitHub repositories. Simply pin or un-pin repositories on your GitHub profile (`https://github.com/nithinp1` is currently used) to update the projects section.
+-   **Resume**: The resume link is currently hardcoded in `src/lib/data.ts` in the `getResumeUrl` function. Update the URL there to point to your latest resume.
 
-To learn more about Next.js, take a look at the following resources:
+### Styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   **Colors**: The color palette can be customized by changing the HSL values in `src/app/globals.css`.
+-   **Fonts**: The primary font is "Inter" from Google Fonts, which is configured in `src/app/layout.tsx` and `tailwind.config.ts`.
+-   **Components**: Components are built using ShadCN UI. You can find them in `src/components/ui` and modify them as needed.
