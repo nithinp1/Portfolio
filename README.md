@@ -1,6 +1,6 @@
-# ApexFolio - Professional Portfolio
+# Professional Portfolio
 
-ApexFolio is a modern, dynamic, and responsive portfolio website built with Next.js and designed to be easily managed. It automatically showcases your pinned GitHub repositories, allows for a detailed "About Me" section, and includes a functional contact form.
+This is a modern, dynamic, and responsive portfolio website built with Next.js and designed to be easily managed. It automatically showcases your pinned GitHub repositories, allows for a detailed "About Me" section, and includes a functional contact form.
 
 ## Core Features
 
