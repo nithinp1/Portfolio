@@ -1,11 +1,17 @@
 import type { About, Project } from "./types";
 
-// This is mock data. In a real application, you would fetch this from a database or CMS.
+// TODO: Fetch this from a CMS or database
 const mockAboutData: About = {
-  background:[ "As a Computer Science student, my curiosity about how machines learn has evolved into a drive to build intelligent applications. I am now focused on exploring frontiers like NLP and computer vision to apply my academic knowledge and create innovative, real-world solutions."
+  background:[ 
+    "Captivated by AI's potential to transform industries and enhance human capabilities.",
+    "Driven to build and deploy intelligent applications, with a focus on NLP and computer vision.",
+    "Committed to applying academic knowledge to create innovative, real-world solutions."
     ],
-  skills: ["Python", "TensorFlow", "PyTorch", "Pandas", "SQL", "Hugging Face Transformers","OpenCV", "Google Colab"],
-  philosophy: ["I am committed to the principles of responsible and human-centered AI. I believe in developing systems that are not only technologically advanced but also transparent, fair, and beneficial to society. My approach involves a creative and experimental mindset, a deep commitment to ethical considerations, and a focus on building AI that empowers and assists people."
+  skills: ["Python", "TensorFlow", "PyTorch", "Unsloth", "SQL", "Hugging Face Transformers","OpenCV", "Google Colab"],
+  philosophy: [
+    "Human-Centered AI: I prioritize creating AI systems that are designed to assist and empower people." ,
+    "Ethical & Responsible: I am deeply committed to building solutions that are transparent, fair, and beneficial for society.",
+    "Creative & Innovative: I approach development with an experimental mindset, focused on finding innovative solutions to real-world problems."
   ],
   highlights: [
     "Engineered an NLP model to analyze and classify student feedback for university courses, providing actionable insights into course improvements.",
@@ -41,6 +47,6 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getResumeUrl(): Promise<string> {
-  // In a real app, you might fetch this from a CMS or database
+  // TODO: Fetch this from a CMS or database
   return "https://docs.google.com/document/d/1OKX6NaInwmy9rqc6PHRnUeNPv89U08cfKvvIolLYDqk/edit?usp=sharing";
 }
