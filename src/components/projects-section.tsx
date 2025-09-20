@@ -10,6 +10,13 @@ import { cn } from '@/lib/utils';
 interface ProjectsSectionProps {
   projects: Project[];
   id: string;
+  name: string;
+  description: string;
+  url: string;
+  stars: number;
+  language: string;
+  imageUrl?: string;
+  imageHint?: string;
 }
 
 export function ProjectsSection({ projects, id }: ProjectsSectionProps) {
