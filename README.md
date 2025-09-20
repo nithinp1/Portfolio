@@ -17,7 +17,7 @@ This is a modern, dynamic, and responsive portfolio website built with Next.js a
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Icons**: [Lucide React](https://lucide.dev/guide/packages/lucide-react)
 - **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
-- **AI (optional)**: [Genkit](https://firebase.google.com/docs/genkit) (scaffolding in place)
+- ~~**AI (optional)**: Genkit~~ "fix: Not planning to impliment" (commit `ccf0f02`)
 
 ### Updating Content
 
