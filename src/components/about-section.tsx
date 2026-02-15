@@ -28,7 +28,7 @@ export function AboutSection({ data, id }: AboutSectionProps) {
           </CardHeader>
           <CardContent className="flex-grow">
               <ul className="space-y-4">
-                {highlights.map((point, index) => (
+                {background.map((point, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0" />
                     <span className="text-muted-foreground">{point}</span>
@@ -46,7 +46,7 @@ export function AboutSection({ data, id }: AboutSectionProps) {
           </CardHeader>
           <CardContent className="flex-grow">
               <ul className="space-y-4">
-                {highlights.map((point, index) => (
+                {philosophy.map((point, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0" />
                     <span className="text-muted-foreground">{point}</span>
