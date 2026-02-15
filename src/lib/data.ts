@@ -1,6 +1,4 @@
-import { get, EdgeConfigValue } from '@vercel/edge-config';
 import type { About, Project } from './types';
-import exp from 'constants';
 
 
 function isValidProject(item: unknown): item is Project {
@@ -9,34 +7,56 @@ function isValidProject(item: unknown): item is Project {
   }
   return (
     'id' in item && typeof (item as any).id === 'string' &&
-    'name' in item && typeof (item as any).name === 'string' &&
+    'title' in item && typeof (item as any).title === 'string' &&
     'description' in item && typeof (item as any).description === 'string' &&
-    'url' in item && typeof (item as any).url === 'string' &&
-    'stars' in item && typeof (item as any).stars === 'number' &&
-    'language' in item && typeof (item as any).language === 'string' &&
     'imageUrl' in item && typeof (item as any).imageUrl === 'string' &&
-    'imageHint' in item && typeof (item as any).imageHint === 'string'
-    
+    'imageHint' in item && typeof (item as any).imageHint === 'string' &&
+    'category' in item && typeof (item as any).category === 'string' &&
+    'links' in item && typeof (item as any).links === 'object'
   );
 }
 
 
 const AboutData: About = {
   background: [
-    "Captivated by AI's potential to transform industries and enhance human capabilities.",
-    'Driven to build and deploy intelligent applications, with a focus on NLP and computer vision.',
-    'Committed to applying academic knowledge to create innovative, real-world solutions.',
+    'Developed HomeFit, a Flutter-based fitness application with Firebase authentication, local notifications, and workout tracking',
+    'Built Finz, a financial portfolio management web application with stock trading simulation, AI assistant, and achievement system',
+    'Created HabitStreakify, a full-stack habit tracking application using modern web technologies',
+    'Designed a Pollution Awareness Website to promote environmental conservation and protection',
   ],
-  skills: ['Python', 'TensorFlow', 'PyTorch', 'Unsloth', 'SQL', 'Hugging Face Transformers', 'OpenCV', 'Google Colab'],
+  skills: [
+    'TypeScript',
+    'JavaScript', 
+    'Dart',
+    'Python',
+    'C',
+    'HTML',
+    'CSS',
+    'React',
+    'Flutter',
+    'Tailwind CSS',
+    'Vite',
+    'Express.js',
+    'Node.js',
+    'Firebase',
+    'Supabase',
+    'PostgreSQL',
+    'Git',
+    'GitHub',
+    'Firebase Firestore',
+    'Lucide React',
+  ],
   philosophy: [
-    'Human-Centered AI: I prioritize creating AI systems that are designed to assist and empower people.',
-    'Ethical & Responsible: I am deeply committed to building solutions that are transparent, fair, and beneficial for society.',
-    'Creative & Innovative: I approach development with an experimental mindset, focused on finding innovative solutions to real-world problems.',
+    'Focus on building production-ready, fully-featured applications across multiple platforms (web and mobile)',
+    'Emphasize clean code architecture and modern development practices',
+    'Passionate about creating user-centric applications that solve real-world problems',
+    'Continuous learning and exploration of new technologies and frameworks',
   ],
   highlights: [
-    'Engineered an NLP model to analyze and classify student feedback for university courses, providing actionable insights into course improvements.',
-    'Designed and implemented a deep learning-based recommendation engine to provide personalized movie suggestions from the MovieLens dataset.',
-    'Developed a chatbot using a transformer-based language model to answer frequently asked questions for a fictional university help desk, improving response efficiency.',
+    'Implemented real-time stock trading features with portfolio management and cash flow tracking in Finz',
+    'Integrated Firebase authentication and local push notifications for fitness reminders in HomeFit',
+    'Built responsive, mobile-first designs with modern UI/UX principles',
+    'Developed full-stack applications with server-side rendering and hot module replacement',
   ],
 };
 
@@ -45,30 +65,59 @@ export function getAboutData(): About {
 }
 
 export async function getProjects(): Promise<Project[]> {
-  try {
-    const projectsData = await get('github_projects');
+  // Hardcoded projects data
+  const projects: Project[] = [
+    {
+      id: 'homefit',
+      title: 'HomeFit',
+      description: 'A Flutter fitness application with Firebase authentication, workout tracking, and local notifications for reminders',
+      imageUrl: 'https://raw.githubusercontent.com/nithinp1/HomeFit/main/assets/icon/icon.png',
+      imageHint: 'HomeFit - Flutter fitness application icon',
+      category: 'Mobile',
+      links: {
+        github: 'https://github.com/nithinp1/HomeFit',
+      },
+    },
+    {
+      id: 'finz',
+      title: 'Finz',
+      description: 'Financial portfolio management web app with stock trading simulation, AI assistant, and achievement system',
+      imageUrl: 'https://raw.githubusercontent.com/nithinp1/Finz/main/public/logo.png',
+      imageHint: 'Finz - Financial portfolio management application logo',
+      category: 'Web',
+      links: {
+        github: 'https://github.com/nithinp1/Finz',
+      },
+    },
+    {
+      id: 'habitstreakify',
+      title: 'HabitStreakify',
+      description: 'Full-stack habit tracking application with modern web development stack and HMR support',
+      imageUrl: 'https://raw.githubusercontent.com/nithinp1/HabitStreakify/main/public/logo.svg',
+      imageHint: 'HabitStreakify - Habit tracking application logo',
+      category: 'Web',
+      links: {
+        github: 'https://github.com/nithinp1/HabitStreakify',
+      },
+    },
+    {
+      id: 'pollution',
+      title: 'Pollution Awareness',
+      description: 'Environmental awareness website promoting conservation and pollution prevention with responsive design',
+      imageUrl: 'https://raw.githubusercontent.com/nithinp1/pollution/main/images/logo.png',
+      imageHint: 'Pollution Awareness - Environmental website logo',
+      category: 'Web',
+      links: {
+        github: 'https://github.com/nithinp1/pollution',
+      },
+    },
+  ];
 
-    if (!projectsData || !Array.isArray(projectsData)) {
-      return [];
-    }
-
-    // Use the type guard to filter the array, ensuring all items match the Project shape.
-    const validProjects = projectsData.filter(isValidProject) as unknown as Project[];
-    
-    return validProjects;
-  } catch (error) {
-    console.error('Failed to fetch or validate projects from Edge Config:', error);
-    return [];
-  }
+  return projects;
 }
 
 export async function getResumeUrl(): Promise<string> {
-  //Fetch the resume URL from Edge Config:
-  const resumeData = await get('application/Resume.pdf');
-  if (resumeData && typeof resumeData === 'object' && 'url' in resumeData) {
-    return (resumeData as { url: string }).url;
-  }
-  // Fallback to static URL if not found
+  // Return static URL directly
   return 'https://arsvtva4mgtrklk6.public.blob.vercel-storage.com/Resume.pdf';
 }
 
